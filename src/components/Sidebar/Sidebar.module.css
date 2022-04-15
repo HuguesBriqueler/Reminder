@@ -70,7 +70,7 @@
   width: 25px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .container_sidebar {
     transform: translateX(-100%);
   }
