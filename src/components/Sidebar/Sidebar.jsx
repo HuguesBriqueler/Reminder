@@ -44,21 +44,21 @@ export default function Sidebar() {
             <div className={`${styles.dot_nav} ${styles.d_green}`}></div>
           </div>
           <ul>
-            {/* <Link to="/"> */}
-            <li>
-              <img src={folderIcon} alt="folder icon" />
-            </li>
-            {/* </Link>
-          <Link to="/edit"> */}
-            <li>
-              <img src={editIcon} alt="edit icon" />
-            </li>
-            {/* </Link>
-          <Link to="/tools"> */}
-            <li>
-              <img src={toolsIcon} alt="tools icon" />
-            </li>
-            {/* </Link> */}
+            <Link to="/">
+              <li>
+                <img src={folderIcon} alt="folder icon" />
+              </li>
+            </Link>
+            <Link to="/edit">
+              <li>
+                <img src={editIcon} alt="edit icon" />
+              </li>
+            </Link>
+            <Link to="/tools">
+              <li>
+                <img src={toolsIcon} alt="tools icon" />
+              </li>
+            </Link>
           </ul>
         </div>
       </nav>
