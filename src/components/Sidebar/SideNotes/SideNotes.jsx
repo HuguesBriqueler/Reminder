@@ -13,6 +13,14 @@ export default function SideNotes() {
     setNotesList(notes);
   }, [notes]);
 
+  const handleSearch = (e) => {
+    const searchValue = e.target.value.toLowerCase();
+    const filteredNotes = notes.filter((note) => {
+      return note.title.toLowerCase().includes(searchValue);
+    });
+    setNotesList(filteredNotes);
+  };
+
   return (
     <div className={styles.notes_display}>
       <h2>Mes Notes</h2>
@@ -21,7 +29,12 @@ export default function SideNotes() {
           e.preventDefault();
         }}
       >
-        <input type="text" id="searchNotes" placeholder="Rechercher" />
+        <input
+          type="text"
+          id="searchNotes"
+          placeholder="Rechercher"
+          onChange={handleSearch}
+        />
       </form>
       <ul className={styles.notes_list}>
         {notesList.map((note) => (
