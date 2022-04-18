@@ -1,6 +1,6 @@
 import { actions } from "./actions";
 
-export const selectedReducer = (state = {}, action) => {
+const selectedReducer = (state = {}, action) => {
   switch (action.type) {
     case actions.SELECT_NOTE:
       return {
@@ -11,3 +11,5 @@ export const selectedReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default selectedReducer;

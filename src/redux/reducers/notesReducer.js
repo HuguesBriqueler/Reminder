@@ -24,7 +24,7 @@ const INITIAL_STATE = {
   ],
 };
 
-export default function notesReducer(state = INITIAL_STATE, action) {
+const notesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actions.ADD_NOTE:
       return {
@@ -53,4 +53,6 @@ export default function notesReducer(state = INITIAL_STATE, action) {
     default:
       return state;
   }
-}
+};
+
+export default notesReducer;
