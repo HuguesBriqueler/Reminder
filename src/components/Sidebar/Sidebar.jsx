@@ -5,6 +5,7 @@ import folderIcon from "./SidebarIcons/folder.svg";
 import toolsIcon from "./SidebarIcons/settings.svg";
 import menuIcon from "./SidebarIcons/menu.svg";
 import styles from "./Sidebar.module.css";
+import SideNotes from "./SideNotes/SideNotes";
 
 export default function Sidebar() {
   // This state is used to toggle the sidebar relative to the window size
@@ -61,6 +62,7 @@ export default function Sidebar() {
             </Link>
           </ul>
         </div>
+        <SideNotes />
       </nav>
     </>
   );
