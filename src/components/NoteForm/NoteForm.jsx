@@ -1,20 +1,109 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./NoteForm.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../../redux/reducers/actions";
 
 export default function NoteForm() {
+  const dispatch = useDispatch();
+
+  const [fields, setFields] = useState({
+    title: "",
+    subtitle: "",
+    body: "",
+  });
+
+  const [validation, setValidation] = useState({
+    title: false,
+    subtitle: false,
+    body: false,
+  });
+
+  const allFields = useRef([]);
+  const addField = (field) => {
+    if (field && !allFields.current.includes(field)) {
+      allFields.current.push(field);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = validation.title && validation.subtitle && validation.body;
+    if (isValid) {
+      dispatch({
+        type: actions.ADD_NOTE,
+        payload: {
+          title: fields.title,
+          subtitle: fields.subtitle,
+          body: fields.body,
+        },
+      });
+      setFields({
+        title: "",
+        subtitle: "",
+        body: "",
+      });
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFields((prevState) => ({ ...prevState, [name]: value }));
+    if (value.length > 0 && !validation[name]) {
+      setValidation((prevState) => ({ ...prevState, [name]: true }));
+    }
+    if (value.length === 0 && validation[name]) {
+      setValidation((prevState) => ({ ...prevState, [name]: false }));
+    }
+  };
+
   return (
     <div className={styles.container_content}>
       <h2>Votre Note</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Titre</label>
-        <input type="text" id="title" />
+        <input
+          onChange={handleChange}
+          value={fields.title}
+          ref={addField}
+          name="title"
+          type="text"
+          id="title"
+        />
+        {!validation.title && (
+          <span className={styles.info_validation}>
+            Le titre est obligatoire
+          </span>
+        )}
 
         <label htmlFor="subtitle">Sous-titre</label>
-        <input type="text" id="subtitle" />
+        <input
+          onChange={handleChange}
+          value={fields.subtitle}
+          ref={addField}
+          name="subtitle"
+          type="text"
+          id="subtitle"
+        />
+        {!validation.subtitle && (
+          <span className={styles.info_validation}>
+            Le sous-titre est obligatoire
+          </span>
+        )}
 
         <label htmlFor="content">Votre texte</label>
-        <textarea id="content" placeholder="Votre texte..." />
-
+        <textarea
+          onChange={handleChange}
+          value={fields.body}
+          ref={addField}
+          name="body"
+          id="content"
+          placeholder="Votre texte..."
+        />
+        {!validation.body && (
+          <span className={styles.info_validation}>
+            Le contenu est obligatoire
+          </span>
+        )}
         <button>Enregistrer</button>
       </form>
     </div>
