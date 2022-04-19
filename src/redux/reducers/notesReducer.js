@@ -29,13 +29,15 @@ const notesReducer = (state = INITIAL_STATE, action) => {
     case actions.ADD_NOTE:
       return {
         ...state,
-        notes: [...state.notes, action.payload],
+        notes: [...state.notes, { ...action.payload, id: uuidv4() }],
       };
+
     case actions.DELETE_NOTE:
       return {
         ...state,
         notes: state.notes.filter((note) => note.id !== action.payload),
       };
+
     case actions.EDIT_NOTE:
       return {
         ...state,
@@ -50,6 +52,7 @@ const notesReducer = (state = INITIAL_STATE, action) => {
           }
         }),
       };
+
     default:
       return state;
   }
