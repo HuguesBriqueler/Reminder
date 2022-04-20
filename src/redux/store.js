@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from "redux";
 import notesReducer from "./reducers/notesReducer";
-import selectedReducer from "./reducers/selectedReducer";
+import editReducer from "./reducers/editReducer";
 
 const rootReducer = combineReducers({
   notesReducer,
-  selectedReducer,
+  editReducer,
 });
 
 const store = createStore(
