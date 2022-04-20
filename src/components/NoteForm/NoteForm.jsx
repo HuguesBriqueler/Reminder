@@ -18,6 +18,23 @@ export default function NoteForm() {
     body: false,
   });
 
+  const modifyNote = useSelector((state) => state.editReducer.editNote);
+
+  useEffect(() => {
+    if (modifyNote.isEdited) {
+      setFields({
+        title: modifyNote.title,
+        subtitle: modifyNote.subtitle,
+        body: modifyNote.body,
+      });
+      setValidation({
+        title: true,
+        subtitle: true,
+        body: true,
+      });
+    }
+  }, [modifyNote]);
+
   const allFields = useRef([]);
   const addField = (field) => {
     if (field && !allFields.current.includes(field)) {
@@ -29,18 +46,38 @@ export default function NoteForm() {
     e.preventDefault();
     const isValid = validation.title && validation.subtitle && validation.body;
     if (isValid) {
-      dispatch({
-        type: actions.ADD_NOTE,
-        payload: {
-          title: fields.title,
-          subtitle: fields.subtitle,
-          body: fields.body,
-        },
-      });
+      if (modifyNote.isEdited) {
+        dispatch({
+          type: actions.UPDATE_NOTE,
+          payload: {
+            id: modifyNote.id,
+            title: fields.title,
+            subtitle: fields.subtitle,
+            body: fields.body,
+          },
+        });
+        dispatch({
+          type: actions.RESET_NOTE,
+        });
+      } else {
+        dispatch({
+          type: actions.ADD_NOTE,
+          payload: {
+            title: fields.title,
+            subtitle: fields.subtitle,
+            body: fields.body,
+          },
+        });
+      }
       setFields({
         title: "",
         subtitle: "",
         body: "",
+      });
+      setValidation({
+        title: false,
+        subtitle: false,
+        body: false,
       });
     }
   };
