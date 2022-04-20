@@ -3,4 +3,5 @@ export const actions = {
   DELETE_NOTE: "DELETE_NOTE",
   EDIT_NOTE: "EDIT_NOTE",
   RESET_NOTE: "RESET_NOTE",
+  UPDATE_NOTE: "UPDATE_NOTE",
 };

@@ -38,19 +38,15 @@ const notesReducer = (state = INITIAL_STATE, action) => {
         notes: state.notes.filter((note) => note.id !== action.payload),
       };
 
-    case actions.EDIT_NOTE:
+    case actions.UPDATE_NOTE:
+      const index = state.notes.findIndex(
+        (note) => note.id === action.payload.id
+      );
+      const updatedNotes = [...state.notes];
+      updatedNotes.splice(index, 1, action.payload);
       return {
         ...state,
-        notes: state.notes.map((note) => {
-          if (note.id === action.payload.id) {
-            return {
-              ...note,
-              ...action.payload.updates,
-            };
-          } else {
-            return note;
-          }
-        }),
+        notes: updatedNotes,
       };
 
     default:
