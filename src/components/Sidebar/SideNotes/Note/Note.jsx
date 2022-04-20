@@ -4,6 +4,14 @@ import editIcon from "./edit.svg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+// Component: Note
+// Description:
+// 		This component is used to display all notes in the sidebar second pane.
+// 		It is composed of a title, subtitle and body.
+// 		It also contains a delete button and an edit button.
+// 		The delete button is used to delete the note.
+// 		The edit button is used to edit the note.
+
 export default function Note({ id, title, subtitle, body }) {
   const dispatch = useDispatch();
 
@@ -11,6 +19,18 @@ export default function Note({ id, title, subtitle, body }) {
     dispatch({
       type: "DELETE_NOTE",
       payload: id,
+    });
+  };
+
+  const editNoteAction = () => {
+    dispatch({
+      type: "EDIT_NOTE",
+      payload: {
+        id,
+        title,
+        subtitle,
+        body,
+      },
     });
   };
 
@@ -24,9 +44,11 @@ export default function Note({ id, title, subtitle, body }) {
         <button onClick={deleteNoteAction}>
           <img src={deleteIcon} alt="delete icon" />
         </button>
-        <button>
-          <img src={editIcon} alt="edit icon" />
-        </button>
+        <Link to="/edit">
+          <button onClick={editNoteAction}>
+            <img src={editIcon} alt="edit icon" />
+          </button>
+        </Link>
       </div>
     </li>
   );
