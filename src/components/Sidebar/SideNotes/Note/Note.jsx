@@ -36,10 +36,12 @@ export default function Note({ id, title, subtitle, body }) {
 
   return (
     <li className={styles.txt_note_prev}>
-      <div className={styles.bloc_note_left}>
-        <p>{title}</p>
-        <p>{subtitle}</p>
-      </div>
+      <Link to={{ pathname: `/note/${id}` }}>
+        <div className={styles.bloc_note_left}>
+          <p>{title}</p>
+          <p>{subtitle}</p>
+        </div>
+      </Link>
       <div className={styles.bloc_note_right}>
         <button onClick={deleteNoteAction}>
           <img src={deleteIcon} alt="delete icon" />
