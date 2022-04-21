@@ -16,7 +16,7 @@ export default function DisplayNote() {
         {currentNote && `${currentNote.subtitle}`}
       </span>
       <p className={styles.txt_display}>
-        {currentNote && `${currentNote.txt}`}
+        {currentNote && `${currentNote.body}`}
       </p>
     </div>
   );
