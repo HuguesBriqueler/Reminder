@@ -57,7 +57,7 @@
   text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .container_content {
     width: 100%;
     margin-left: 0px;
