@@ -39,7 +39,7 @@
   background: #ebebeb;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .notes_display h2 {
     padding: 30px 0px;
     text-align: center;
