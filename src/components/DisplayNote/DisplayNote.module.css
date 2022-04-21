@@ -1,0 +1,40 @@
+.display_txt_zone {
+  min-height: 100vh;
+  background: #f1f1f1;
+  padding: 30px;
+  position: absolute;
+  z-index: -1;
+  width: calc(100% - 460px);
+  margin-left: 460px;
+}
+
+.display_txt_zone .title_display {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.display_txt_zone .subtitle_display {
+  margin-top: 20px;
+  font-size: 25px;
+}
+.display_txt_zone .txt_display {
+  margin-top: 20px;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .display_txt_zone {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .container_txt_zone h2 {
+    font-size: 27px;
+  }
+  .container_txt_zone button {
+    display: block;
+    margin: 20px auto;
+  }
+}
