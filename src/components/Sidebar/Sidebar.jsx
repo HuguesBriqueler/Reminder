@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux/reducers/actions";
 import editIcon from "./SidebarIcons/edit.svg";
 import folderIcon from "./SidebarIcons/folder.svg";
 import toolsIcon from "./SidebarIcons/settings.svg";
@@ -25,6 +27,8 @@ export default function Sidebar() {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -52,7 +56,9 @@ export default function Sidebar() {
             </Link>
             <Link to="/edit">
               <li>
-                <img src={editIcon} alt="edit icon" />
+                <button onClick={dispatch({ type: actions.RESET_NOTE })}>
+                  <img src={editIcon} alt="edit icon" />
+                </button>
               </li>
             </Link>
             <Link to="/tools">
