@@ -1,6 +1,15 @@
 import { v4 as uuidv4 } from "uuid";
 import { actions } from "./actions";
 
+// Reducer: notesReducer
+// Description: Reducer for the notes feature
+//    - ADD_NOTE: action to add a note
+//              payload: the note to be added, id will be generated
+//    - DELETE_NOTE: action to delete a note
+//              payload: the id of the note to be deleted
+//    - UPDATE_NOTE: action to update a note
+//              payload: the id of the note to be updated
+
 const INITIAL_STATE = {
   notes: [
     {

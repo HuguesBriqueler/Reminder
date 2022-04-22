@@ -2,6 +2,12 @@ import styles from "./ListNotes.module.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+// Component: ListNotes
+// Description: Displays a list of notes on root page
+// The list of notes is retrieved from the store
+// then mapped to a list of cards
+// Each card contains a link to the note details (DisplayNote)
+
 export default function ListNotes() {
   const { notes } = useSelector((state) => state.notesReducer);
 

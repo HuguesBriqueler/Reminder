@@ -9,6 +9,13 @@ import menuIcon from "./SidebarIcons/menu.svg";
 import styles from "./Sidebar.module.css";
 import SideNotes from "./SideNotes/SideNotes";
 
+// Component: Sidebar
+// Description:
+//    This component is responsible for displaying the sidebar responsivaly.
+//    It is composed of a menu button, a set of sidebar buttons, a search bar and a list of notes.
+//    The menu button is used to display the sidebar menu on mobile devices, otherwise it is hidden.
+//    On regular devices, the menu button is hidden and the sidebar menu is displayed.
+
 export default function Sidebar() {
   // This state is used to toggle the sidebar relative to the window size
   const [viewWidth, setViewWidth] = useState(window.innerWidth);

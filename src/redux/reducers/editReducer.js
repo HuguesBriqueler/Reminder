@@ -1,5 +1,14 @@
 import { actions } from "./actions";
 
+// Reducer: editReducer
+// Description: Reducer for the edit feature
+//    - editNote: the note to be edited
+//    - isEdited: flag to know if the note is edited or not
+//   EDIT_NOTE: action to edit a note
+//              payload: the note to be edited
+//   RESET_NOTE: action to reset the note to be edited
+//              payload: none
+
 const INITIAL_STATE = {
   editNote: {
     title: "",

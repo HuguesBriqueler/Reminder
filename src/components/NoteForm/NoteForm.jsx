@@ -1,25 +1,39 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import styles from "./NoteForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux/reducers/actions";
 
+// Component: NoteForm
+// Description: Displays a form to create a new note or edit an existing one
+// The form fields are initialized with empty values for new notes
+// Then the editReducer is used to retrieve the note to edit
+// If the isEdited flag is set to true, the form fields are initialized with the note values in useEffect
+// After validation, the note is created or updated in the store using the proper action
+// The form is reset after submission
+// But the editReducer is not reset when edit is cancelled,
+//    creating a potential issue when a new note is created after an edit.
+//    So the editReducer is reset in the Sidebar component to avoid this issue.
+
 export default function NoteForm() {
   const dispatch = useDispatch();
 
+  // Initialize form fields with empty values for new notes
   const [fields, setFields] = useState({
     title: "",
     subtitle: "",
     body: "",
   });
-
+  // Initialize validation flags for new notes
   const [validation, setValidation] = useState({
     title: false,
     subtitle: false,
     body: false,
   });
 
+  // Retrieve the note to edit from the editReducer
   const modifyNote = useSelector((state) => state.editReducer.editNote);
 
+  // Initialize the form fields with the note values to be edited in useEffect if isEdited flag is set to true
   useEffect(() => {
     if (modifyNote.isEdited) {
       setFields({
@@ -27,6 +41,7 @@ export default function NoteForm() {
         subtitle: modifyNote.subtitle,
         body: modifyNote.body,
       });
+      // Initialize validation flags with ok values for the note to be edited
       setValidation({
         title: true,
         subtitle: true,
@@ -35,13 +50,7 @@ export default function NoteForm() {
     }
   }, [modifyNote]);
 
-  const allFields = useRef([]);
-  const addField = (field) => {
-    if (field && !allFields.current.includes(field)) {
-      allFields.current.push(field);
-    }
-  };
-
+  // Validate fields and dispatch the action to create or update the note
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValid = validation.title && validation.subtitle && validation.body;
@@ -82,6 +91,7 @@ export default function NoteForm() {
     }
   };
 
+  // Two way data binding for form fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFields((prevState) => ({ ...prevState, [name]: value }));
@@ -101,7 +111,6 @@ export default function NoteForm() {
         <input
           onChange={handleChange}
           value={fields.title}
-          ref={addField}
           name="title"
           type="text"
           id="title"
@@ -116,7 +125,6 @@ export default function NoteForm() {
         <input
           onChange={handleChange}
           value={fields.subtitle}
-          ref={addField}
           name="subtitle"
           type="text"
           id="subtitle"
@@ -131,7 +139,6 @@ export default function NoteForm() {
         <textarea
           onChange={handleChange}
           value={fields.body}
-          ref={addField}
           name="body"
           id="content"
           placeholder="Votre texte..."

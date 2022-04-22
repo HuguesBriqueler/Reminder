@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 // 		It also contains a delete button and an edit button.
 // 		The delete button is used to delete the note.
 // 		The edit button is used to edit the note.
+//    It also provide a link to the note details (DisplayNote) using id as url parameter.
 
 export default function Note({ id, title, subtitle, body }) {
   const dispatch = useDispatch();

@@ -4,6 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./SideNotes.module.css";
 import Note from "./Note/Note";
 
+// Component: SideNotes
+// Description:
+//    This component is responsible for displaying the notes in the sidebar second pane.
+//    It also provide a search bar to filter the notes.
+//    Notes are retrieved from the store, filtered according to the search bar value
+//    then mapped to provide data to the Note component.
+
 export default function SideNotes() {
   const { notes } = useSelector((state) => state.notesReducer);
 

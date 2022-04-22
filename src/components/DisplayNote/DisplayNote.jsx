@@ -2,6 +2,12 @@ import styles from "./DisplayNote.module.css";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+// Component: DisplayNote
+// Description: Displays details of a note
+// Note id is provided as a parameter in the url
+// The note is retrieved from the store
+// The note is displayed in a card
+
 export default function DisplayNote() {
   const { id } = useParams();
   const { notes } = useSelector((state) => state.notesReducer);
