@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Reminder/static/css/main.4dc9b62f.css",
+    "main.css": "/Reminder/static/css/main.73b3e0e6.css",
     "main.js": "/Reminder/static/js/main.3de49b89.js",
     "static/js/787.4b03190c.chunk.js": "/Reminder/static/js/787.4b03190c.chunk.js",
     "static/media/settings.svg": "/Reminder/static/media/settings.b282a86f103227258fcbb93f5e2ac13c.svg",
@@ -9,12 +9,12 @@
     "static/media/edit.svg": "/Reminder/static/media/edit.3c70b53795b8b86b5bd469f2d48afc3b.svg",
     "static/media/remove.svg": "/Reminder/static/media/remove.562b6f7bf7e482744720f6ec099ae7fb.svg",
     "index.html": "/Reminder/index.html",
-    "main.4dc9b62f.css.map": "/Reminder/static/css/main.4dc9b62f.css.map",
+    "main.73b3e0e6.css.map": "/Reminder/static/css/main.73b3e0e6.css.map",
     "main.3de49b89.js.map": "/Reminder/static/js/main.3de49b89.js.map",
     "787.4b03190c.chunk.js.map": "/Reminder/static/js/787.4b03190c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4dc9b62f.css",
+    "static/css/main.73b3e0e6.css",
     "static/js/main.3de49b89.js"
   ]
 }
