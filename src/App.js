@@ -2,7 +2,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import NoteForm from "./components/NoteForm/NoteForm";
 import ListNotes from "./components/ListNotes/ListNotes";
 import DisplayNote from "./components/DisplayNote/DisplayNote";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+// HashRouter is used to help Github Pages render the app correctly
 
 function App() {
   return (
