@@ -63,7 +63,7 @@ export default function Sidebar() {
             </Link>
             <Link to="/edit">
               <li>
-                <button onClick={dispatch({ type: actions.RESET_NOTE })}>
+                <button onClick={() => dispatch({ type: actions.RESET_NOTE })}>
                   <img src={editIcon} alt="edit icon" />
                 </button>
               </li>
