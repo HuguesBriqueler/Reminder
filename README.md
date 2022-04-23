@@ -1,4 +1,36 @@
-# Getting Started with Create React App
+# Reminder
+
+is a project using React & Redux, fully responsive with a maskable sidebar menu.
+It allows you to write down all kinds of tasks to do, recipes, tricks and so on.
+No back-end is provided, so no card will be saved.
+
+</br>
+</br>
+You can click on the screenshot to give it a try
+</br>
+<table>
+  <tr>
+    <td align="center">
+    <a href="https://huguesbriqueler.github.io/Mug-Shop/" target="_blank">
+      <img src="https://i.ibb.co/4sZJrQb/Reminder-Main.png" width="240px" alt="Mug-Shop Products screen">
+    </a>
+    </td>
+    <td align="center">
+    <a href="https://huguesbriqueler.github.io/Mug-Shop/" target="_blank">
+      <img src="https://i.ibb.co/VpDqgV8/Reminder-Edit.png" width="240px" alt="Mug-Shop Cart screen">
+    </a>
+    </td>
+    <td align="center">
+    <a href="https://huguesbriqueler.github.io/Mug-Shop/" target="_blank">
+      <img src="https://i.ibb.co/kq9WDPv/Reminder-Responsive.png" width="240px" alt="Mug-Shop Cart screen">
+    </a>
+    </td>
+  </tr>
+</table>
+
+</br>
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
