@@ -54,6 +54,7 @@
 .sidebar button {
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .sidebar ul li img {
