@@ -12,12 +12,12 @@ You can click on the screenshot to give it a try
   <tr>
     <td align="center">
     <a href="https://huguesbriqueler.github.io/Mug-Shop/" target="_blank">
-      <img src="https://i.ibb.co/4sZJrQb/Reminder-Main.png" width="240px" alt="Mug-Shop Products screen">
+      <img src="https://i.ibb.co/4sZJrQb/Reminder-Main.png" width="340px" alt="Mug-Shop Products screen">
     </a>
     </td>
     <td align="center">
     <a href="https://huguesbriqueler.github.io/Mug-Shop/" target="_blank">
-      <img src="https://i.ibb.co/VpDqgV8/Reminder-Edit.png" width="240px" alt="Mug-Shop Cart screen">
+      <img src="https://i.ibb.co/VpDqgV8/Reminder-Edit.png" width="340px" alt="Mug-Shop Cart screen">
     </a>
     </td>
     <td align="center">
